@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <p id="demo"></p>
+    <input id="firstn" placeholder="Give first number"><br>
+    <input id="secondn" placeholder="Give second number" />
+    <button onClick="myFunction()" type="button">Test Input</button>
+    <p id="demo1"></p>
+    <script>
+
+        function myFunction() {
+            let x = document.getElementById('firstn').value;
+            let y = document.getElementById('secondn').value;
+            const msg = document.getElementById('demo1');
+            msg.innerHTML = '';
+            try {
+                if (x.trim() == "" || y.trim() == "") throw "is empty";
+                if (isNaN(x)) throw "is not a number";
+                x = Number(x);
+                if (x > 10 ||y>10) throw "is too high";
+                if (x < 5 || x<5) throw "is too low";
+            }
+            catch (err) {
+                msg.innerHTML = "Input " + err;
+            }
+        }
+
+        // call Method
+        let person1 ={
+            firstname : 'Vishu',
+            lastname : 'Kush',
+            fullname:function(){
+                return this.firstname + ' ' + this.lastname;
+            }
+        }
+        let person2 = {
+            firstname : 'Piya',
+            lastname : 'Kush'
+        }
+        c1 = person1.fullname.call(person2);
+        c2 = person1.fullname.bind(person2);
+        document.getElementById('demo').innerHTML = c1 + ' ' + c2();
+    </script>
+</body>
+
+</html>

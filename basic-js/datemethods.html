@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Here we show all date methods</h1>
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+        <p id="demo3"></p>
+        <p id="demo4"></p>
+        <script>
+            const d1=new Date();
+            //Date(year,month,day,hour,mnute,second,milisecond)
+            const d2= new Date(2023,8,3,27,25,12);
+            const d3 = d1.toDateString();
+            const d4 = d1.toUTCString();
+            const d5 = d1.toISOString();
+            const d6 = new Date('12/08/3')
+            const d7 = new Date('12-8-3')
+            const msec =Date.parse('2024/5/12');
+            document.getElementById('demo1').innerHTML=d1 +'<br>' + d2
+             +'<br>' + d3+'<br>' + d4+'<br>' + d5 +'<br>' + d6  +'<br>' + d7 + '<br>' + msec;
+
+             //Date Get  and set methods 
+             document.getElementById('demo2').innerHTML=d1.getFullYear() + ' ' +d1.getMonth() +'<br>' + d1.getDay()
+             +'<br>' + d1.getDate()+'<br>' + d1.getHours()+'<br>' + d1.getMinutes() +'<br>' + d1.getSeconds()  +'<br>' + d1.getMilliseconds() +' '+Date.now() ;
+
+             //math methods
+            // document.getElementById('demo3').innerHTML=Math.sin(90) +'<br>'+Math.cos(90) +'<br>'+Math.random(2)+
+            // '<br>'+Math.log(2)+'<br>'+Math.log10(3)+'<br>'+Math.pi()+'<br>'+Math.sqrt(2);
+
+            //switch case
+            let day;
+            switch (new Date().getDay()){
+                case 0:
+                    day="Today is Sunday"
+                    break;
+
+                case 1:
+                    day="Today is Monday"
+                    break;
+
+                case 2:
+                    day=" Today is Tuesday"
+                    break;
+
+                case 3:
+                    day=" Today is Wednesday"
+                    break;
+
+                case 4:
+                    day=" Today is Thursday"
+                    break;
+
+                case 5:
+                    day=" Today is Friday"
+                    break;
+
+                case 6:
+                    day=" Today is Saturday"
+                    break;
+
+                default:
+                    day="Not Found";
+                
+            }
+            document.getElementById('demo4').innerHTML=day;
+
+        </script>
+    </body>
+</html>

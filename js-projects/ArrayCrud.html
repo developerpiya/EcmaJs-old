@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="return false;">
+        <input type="text" name="" id="fname">
+    <button onclick="savedata()">save</button>
+    <!-- <button onclick="deletedata()">delete</button> -->
+    </form>
+    <!-- <p id="demo"></p> -->
+    <table border="1">
+        <thead>
+            
+                <td>Sr. No</td>
+                <td>Name</td>
+                <td>Operations</td>
+            
+        </thead>
+        <tbody id="demo">
+
+        </tbody>
+    </table>
+
+
+    <script>
+        const arr = [];
+        var data = '';
+
+        function savedata(){
+            var fname = document.getElementById('fname').value;
+            arr.push(fname);
+            getarrdata();
+        // document.getElementById('demo').innerHTML = `<tr><td> ${arr.length} </td><td>${arr}</td></tr>`;
+        }
+     
+        function getarrdata(){
+            var sr =1;
+            document.getElementById('demo').innerHTML = `<tr><td> ${sr} </td><td>${arr}</td></tr>`;
+            
+            sr+=1;
+            // arr.forEach((val,index)=>{
+            //     data += val;
+            //     document.getElementById('demo').innerHTML = `<tr><td> ${index} </td><td>${data}</td></tr>`;
+                
+            // })
+        }
+        function deletedata(){
+
+        }
+    </script>
+</body>
+</html>

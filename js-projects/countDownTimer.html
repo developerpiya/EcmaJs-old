@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Down Timer</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <button onclick="start()">play</button>
+    <button onclick="clearInterval(setInterval(start, 1000))">pause</button>
+    <script>
+        
+        function start() {
+            setInterval(start, 1000)
+            var date = new Date();
+            document.getElementById('demo').innerHTML = date;
+        }
+    </script>
+</body>
+
+</html>

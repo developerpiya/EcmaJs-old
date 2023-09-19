@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body onload="check()">
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <p id="demo8"></p>
+    <button onclick="this.innerHTML=Date()">show date</button>
+    <script>
+        // for numbers
+        let a = 5, b = 6;
+        a += b;
+        document.getElementById('demo1').innerHTML = a;
+
+        //for string
+        let name1 = 'Arjune';
+        let name2 = 'Kairav';
+        let result = name1 > name2
+        document.getElementById('demo2').innerHTML = result;
+
+        //concotenation
+        let name = 'Anika Agrawal';
+        name = `My name is ${name}`;
+        document.getElementById('demo3').innerHTML = name;
+
+        //power function
+        n = 5;
+        document.getElementById('demo4').innerHTML = Math.pow(n, 2)
+
+        //BigInt function
+        n1 = BigInt('1233543546767988797654326765');
+        document.getElementById('demo5').innerHTML = n1;
+
+        //using onload function
+        function check() {
+            if (navigator.cookieEnabled == true) {
+                var text;
+                text = 'cookie Enabled';
+            } else {
+                text = 'cookies not enabled'
+            }
+            document.getElementById('demo6').innerHTML = text;
+        }
+
+        //object key find as a array
+        const obj={
+            sub1:'Hindi',
+            sub2:'Eng',
+            sub3:'Sci',
+            pcm:function(){
+                return this.sub1 +' ' + this.sub2
+                }
+            
+        }
+        document.getElementById('demo7').innerHTML=obj['sub1']+' '+obj['sub2']+' '+obj.pcm();
+
+        //string
+        let s1 = 'Piya';
+        let s2 = new String('Piya');
+        document.getElementById('demo8').innerHTML=typeof(s1)+' '+typeof(s2) + ' ' + (s1==s2) + ' '+ (s1===s2);
+
+
+    </script>
+</body>
+
+</html>

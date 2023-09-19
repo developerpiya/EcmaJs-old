@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<p id="showtime"></p>
+<button type="button" onclick="clearInterval(clock)">stop setInterval</button><br/><br/>
+<button type="button" onclick="clearInterval(clock1)">stop setTimeout</button>
+<body>
+    <script>
+        var clock = setInterval(clockTiming, 1000);
+        function clockTiming() {
+            var d = new Date();
+            var locald = d.toLocaleTimeString();
+            document.getElementById('showtime').innerHTML = locald;
+        }
+
+        //setTimeout
+        var clock1 = setTimeout(showalert,3000);
+        function showalert(){
+            alert('Welcome in js');
+        }
+
+        //eval function
+        document.write(eval('2+2'))
+    </script>
+</body>
+
+</html>

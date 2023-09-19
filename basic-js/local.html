@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //localStorage
+        var name = 'piya';
+        console.log(name);
+        // localStorage.setItem('name',name);
+
+        // localStorage.clear();
+
+        // localStorage.getItem('name',name);
+
+        localStorage.setItem('name1','Jiya');
+        localStorage.setItem('name2','Tiya');
+        localStorage.setItem('name3','Siya');
+        localStorage.removeItem('name2');
+
+        var arr = ['Vihsal','Anjali'];
+        localStorage.setItem('arr',JSON.stringify(arr));
+        localStorage.getItem('arr',arr);
+        console.log(JSON.parse(localStorage.getItem('arr')));
+
+
+        // sessionStorage
+        var user = 'Priya';
+        sessionStorage.setItem('user',user);
+        console.log(sessionStorage.getItem('user',user));
+        // sessionStorage.removeItem('user');
+        // sessionStorage.clear();
+        var arr1 = ['Sohan','Mohan'];
+        sessionStorage.setItem('arr1',JSON.stringify(arr1));
+       console.log(JSON.parse(sessionStorage.getItem('arr1')))
+        
+    </script>
+</body>
+</html>

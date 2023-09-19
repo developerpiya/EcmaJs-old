@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript Form Validations</title>
+    <style>
+        body{
+            padding: 10px 50px;
+        }
+        .formdesign{
+            font-size: 20px;
+        }
+        .formdesign input{
+            width: 50%;
+            padding: 12px 20px;
+            border: 1px solid blue;
+            margin: 14px;
+            font-size:15px;
+        }
+        .formerror{
+            color: red;
+        }
+        .btn{
+            border-radius: 9px;
+            width: 100px;
+            height: 30px;
+            font-size: 25px;
+            margin: 22px 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form Validations</h1>
+    <form action="myaction.php" name="myform" onsubmit="return validateForm()" method="post">
+        <div class="formdesign" id="name">
+            Name : <input type="text" name="fname" id="" required>
+            <b><span class="formerror"></span></b>
+        </div>
+
+        <div class="formdesign" id="email">
+            Email : <input type="text" name="femail" id="" required>
+            <b><span class="formerror"></span></b>
+        </div>
+
+        <div class="formdesign" id="phone">
+            Phone : <input type="phone" name="fphone" id="" required>
+            <b><span class="formerror"></span></b>
+        </div>
+
+        <div class="formdesign" id="password">
+            Password : <input type="password" name="fpassword" id="" required>
+            <b><span class="formerror"></span></b>
+        </div>
+
+        <div class="formdesign" id="cpassword">
+            Confirm Password : <input type="password" name="fcpassword" id="" required>
+            <b><span class="formerror"></span></b>
+        </div>
+
+        <input type="submit" name="" id="" class="btn" value="submit">
+    </form>
+    <script>
+        function clearErrors(){
+            var errors = document.getElementsByClassName('formerror');
+            for(let item of errors){
+                item.innerHTML = '';
+            }
+        }
+
+        function seterror(id,error){
+            element= document.getElementById(id);
+            element.getElementsByClassName('formerror')[0].innerHTML = error;
+        }
+
+        function validateForm(){
+            var returnval = true;
+            clearErrors();
+
+            var name = document.forms['myform']['fname'].value;
+            if(name.length < 5){
+                seterror('name','*Length is too short');
+                return false;
+            }
+
+            var email = document.forms['myform']['femail'].value;
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if(!email.match(mailformat)){
+                seterror('email','*Invalid Email');
+                return false;
+            }
+
+            var phone = document.forms['myform']['fphone'].value;
+            var phoneno = /^\d{10}$/;
+            if(!phone.match(phoneno)){
+                seterror('phone','*Phone Numer Invalid and should be 10 digits');
+                return false;
+            }
+
+            var password = document.forms['myform']['fpassword'].value;
+            var lowerCaseLetters = /[a-z]/g;
+            var upperCaseLetters = /[A-Z]/g;
+            var numbers = /[0-9]/g;
+            if(password.length <=8 && password.match(lowerCaseLetters) && password.match(upperCaseLetters) && password.match(numbers)){
+                seterror('password','*password should be 8 characters,one should be small letter,capital letter and number');
+                return false;
+            }
+
+            var cpassword = document.forms['myform']['fcpassword'].value;
+            if(cpassword.length != password){
+                seterror('cpassword','*Password Mismatch');
+                return false;
+            }
+            return returnval;
+        }
+
+    </script>
+</body>
+</html>

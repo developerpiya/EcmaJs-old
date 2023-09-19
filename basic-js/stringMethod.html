@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <p id="demo">Hii I am a Graduate Student and I like coding "Hello" "Hello" "Hello" "Hello"</p>
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+        <p id="demo3"></p>
+        <p id="demo4"></p>
+        <p id="demo5"></p>
+        <p id="demo6"></p>
+        <p id="demo7"></p>
+        <p id="demo8"></p>
+        <p id="demo9"></p>
+        <p id="demo10"></p>
+        <p id="demo11"></p>
+        <p id="demo12"></p>
+        <p id="demo13"></p>
+        <p id="demo14"></p>
+    <script>
+        text=document.getElementById('demo').innerHTML;
+        document.getElementById('demo1').innerHTML=text.length;
+
+        //slice
+        document.getElementById('demo2').innerHTML=text.slice(5,10);
+
+        //substring
+        document.getElementById('demo3').innerHTML=text.slice(5,10);
+
+         //substr
+         document.getElementById('demo4').innerHTML=text.slice(5,10);
+
+         //replace
+         document.getElementById('demo5').innerHTML=text.replace('coding','Java Script');
+
+         //replaceAll
+         document.getElementById('demo6').innerHTML=text.replaceAll('\"Hello\"','Fine');
+
+         //toUpperCase
+         document.getElementById('demo7').innerHTML=text.toUpperCase();
+
+         //toLowerCase
+         document.getElementById('demo8').innerHTML=text.toLowerCase() + ' ' + text.concat('Jiya');
+
+         //trim() trimStart() trimEnd()
+         s2="     Hello           World "
+         document.getElementById('demo9').innerHTML=s2 + ' ' + s2.trim() + '<br>' + s2.trimStart() + '<br>' +s2.trimEnd();
+
+         //padStart() padEnd() charAt() charCodeAt()
+         let s3='j';
+         let s4=8;
+         let s5=s4.toString();
+         let s6='jiya';
+         document.getElementById('demo10').innerHTML=s3.padStart(4,'0') + '<br>' + s3.padEnd(5,'x') + '<br>' +
+          s5.padStart(3,'a') +'<br>' + s6.charAt(0) +'<br>' +s6.charCodeAt(2);
+
+          //split function
+        let a='heyhow areyou';
+        document.getElementById('demo11').innerHTML=a.split('h');
+
+        //indexOf() lastIndexOf() 
+        //If any element not found then return -1
+        let st1='Hii Hello or thank you chalte h fir milenge Hii Hello or thank you chalte h fir milenge';
+        document.getElementById('demo12').innerHTML=st1.indexOf('Hello') + ' ' + st1.lastIndexOf('Hello') + ' ' +
+        st1.indexOf('piya') + '<br>' + st1.indexOf('Hii',13) + '<br>' + st1.search('thank')   + '<br>' 
+        + st1.match('y') + '<br>' + st1.match(/yo/g) + '<br>' + Array.from(st1.matchAll('th')) + '<br>'
+         + Array.from(st1.matchAll(/ir/g)) + '<br>' + st1.includes('chalte') + '<br>' + st1.includes('yrr',11)
+         + '<br>' + st1.startsWith('Hii') + '<br>' + st1.startsWith('Hello') + '<br>' + st1.startsWith('Hii',10)
+         + '<br>' + st1.endsWith('you') + '<br>' + st1.endsWith('ji') + '<br>' + st1.endsWith('you',21);
+
+         //template literals
+         let heading = 'Template Literals';
+         let list = ['ES1', 'ES2', 'ES3', 'ES5', 'ES6'];
+         let show = `<h2> ${heading} </h2>`;
+         let tags = `<ul>`;
+         for(x of list){
+            tags += `<li>${x}</li>`;
+         }
+         document.getElementById('demo13').innerHTML = show + ' ' + tags;
+
+         //Numbers
+         let a1=10;
+         let b1=20;
+         document.getElementById('demo14').innerHTML='The Result is' + a1 + b1 + ' ' + (a1+b1);
+
+    </script>
+    </body>
+</html>

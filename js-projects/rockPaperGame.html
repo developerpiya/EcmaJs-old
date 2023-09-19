@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissor Game</title>
+    <style>
+        body {
+            background-color: rgb(3, 3, 32);
+
+        }
+
+        .container {
+            text-align: center;
+            color: #fff;
+        }
+
+        h1 {
+            background-color: #000;
+            font-size: 30px;
+            color: white;
+        }
+
+        h2 {
+            background-color: #000;
+            font-size: 20px;
+            color: white;
+        }
+
+        .img img {
+            height: 150px;
+            width: 150px;
+        }
+
+        .img {
+            margin: 20px;
+        }
+
+        /* #userImg {
+            width: 150px;
+            height: 150px;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Rock Paper Scissor</h1>
+
+        <div class="score">
+            <div class="user">
+                <h2>My Score :</h2>
+                <h2 id="myscore"></h2>
+            </div>
+
+            <div class="user">
+                <h2>Computer Score :</h2>
+                <h2 id="comp"></h2>
+            </div>
+        </div>
+
+        <div class="show">
+
+            <div class="userShow">
+                <h2>User</h2>
+                <img src="" alt="" id="userImg">
+            </div>
+
+            <div class="compShow">
+                <h2>Computer</h2>
+                <img src="" alt="" id="compImg">
+            </div>
+
+        </div>
+
+        <div class="rs">
+            <h2>Result</h2>
+            <h2 id="result"></h2>
+        </div>
+
+        <div class="img">
+            <img src="rock.jpg" alt="" onclick="myFunc1()">
+            <img src="paper.jpg" alt="" onclick="myFunc2()">
+            <img src="scissor.webp" alt="" onclick="myFunc3()">
+        </div>
+    </div>
+
+    <script>
+        function myFunc1() {
+            let rock = document.getElementById('userImg').src = 'rock.jpg';
+            document.getElementById('userImg').style.maxWidth = '150px';
+
+            let num = Math.floor(Math.random() * 3);
+            console.log(num);
+
+            if (num == 0){
+                let rocks = document.getElementById('compImg').src = 'rock.jpg';
+                document.getElementById('compImg').style.maxWidth = '150px';
+                if(rock && rocks){
+                    document.getElementById('result').innerHTML = 'Game Draw !';
+                }
+            }
+
+            if (num == 1){
+                let paper = document.getElementById('compImg').src = 'paper.jpg';
+                document.getElementById('compImg').style.maxWidth = '150px';
+                if(rock && paper){
+                    document.getElementById('result').innerHTML = 'You Loss the Game !';
+                }
+            }
+
+            if (num == 2){
+                let scissor = document.getElementById('compImg').src = 'scissor.webp';
+                document.getElementById('compImg').style.maxWidth = '150px';
+                if(rock      && scissor){
+                    document.getElementById('result').innerHTML = 'You Win the Game !';
+                }
+            }
+        }
+
+        function myFunc2() {
+            let paper = document.getElementById('userImg').src = 'paper.jpg';
+            document.getElementById('userImg').style.maxWidth = '150px';
+
+             let num = Math.floor(Math.random() * 3);
+            console.log(num);
+
+            if (num == 0){
+                let papers = document.getElementById('compImg').src = 'paper.jpg';
+                document.getElementById('compImg').style.maxWidth = '150px';
+                if(paper && papers){
+                    document.getElementById('result').innerHTML = 'Game Draw !';
+                }
+            }
+
+            if (num == 1){
+                let rock = document.getElementById('compImg').src = 'rock.jpg';
+                document.getElementById('compImg').style.maxWidth = '150px';
+                if(paper && rock){
+                    document.getElementById('result').innerHTML = 'You Win the Game !';
+                }
+            }
+
+            if (num == 2){
+                let scissor = document.getElementById('compImg').src = 'scissor.webp';
+                document.getElementById('compImg').style.maxWidth = '150px';
+                if(paper && scissor){
+                    document.getElementById('result').innerHTML = 'You Loss the Game !';
+                }
+            }
+        }
+
+        function myFunc3() {
+            let scissor = document.getElementById('userImg').src = 'scissor.webp';
+            document.getElementById('userImg').style.maxWidth = '150px';
+
+            let num = Math.floor(Math.random() * 3);
+            console.log(num);
+
+            if (num == 0){
+                let scissors = document.getElementById('compImg').src = 'scissor.webp';
+                document.getElementById('compImg').style.maxWidth = '150px';
+                if(scissor && scissors){
+                    document.getElementById('result').innerHTML = 'Game Draw !';
+                }
+            }
+
+            if (num == 1){
+                let rock = document.getElementById('compImg').src = 'rock.jpg';
+                document.getElementById('compImg').style.maxWidth = '150px';
+                if(scissor && rock){
+                    document.getElementById('result').innerHTML = 'You Loss the Game !';
+                }
+            }
+
+            if (num == 2){
+                let paper = document.getElementById('compImg').src ='paper.jpg';
+                document.getElementById('compImg').style.maxWidth = '150px';
+                if(scissor && paper){
+                    document.getElementById('result').innerHTML = 'You Loss the Game !';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

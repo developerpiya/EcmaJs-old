@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+       
+    </head>
+    <body>
+        <h1>Here we learn about all document type</h1>
+        <p id="demo">Text change here</p>
+        <p id="demo1">font change here</p>
+        <p id="demo2">color change here</p>
+        <p id="demo3">background change here</p>
+        <p id="demo4"></p>
+        <p id="demo5">Here Display show after click button display will be none</p>
+        <img src="images/kanha.jpg" id="imgchange" width="200"/>
+        <br/>
+        <p id="demo6"></p>
+        <p id="demo7"></p>
+        <p id="demo8"></p>
+        <p id="demo9"></p>
+        <p id="demo10"></p>
+       <button onclick="document.getElementById('demo').innerHTML='Text change into other text'">demo</button>
+       <button onclick="document.getElementById('demo1').style.fontSize='35px'">demo1</button>
+       <button onclick="document.getElementById('demo2').style.color='blue'">demo2</button>
+       <button onclick="document.getElementById('demo3').style.backgroundColor='red'">demo3</button>
+       <button onclick="document.getElementById('demo4').innerHTML='Here We show text'">demo4</button>
+       <button onclick="document.getElementById('demo5').style.display='none'">demo5</button>
+       <button onclick="document.getElementById('imgchange').src='images/radha.jpg'">image change</button>
+       <button onclick="document.write(5+5)">try it</button>
+       <button onclick="myfunction()">click me</button>
+       <script>
+        document.write(5+6);
+        // window.alert('hello piya')
+        console.log('hello kush')
+        
+        // For Demo 6
+        function myfunction(){
+            document.getElementById('demo6').innerHTML='Kushwah';
+        }
+
+
+        //For Demo 7
+        let fname='piya', lname='kush';
+        document.getElementById('demo7').innerHTML=fname + ' ' + lname;
+
+        //For Demo 8
+        let $$=7;
+        let $$$=10;
+        document.getElementById('demo8').innerHTML = $$ + $$$;
+
+        //const is used to make constant reference address of objects and array not element we can change the elements and properties of array and object
+        const arr=['piya','jiya','tiya','siya'];
+        arr[0]='Priya';
+        arr.push('kiya');
+        document.getElementById('demo9').innerHTML=arr;
+
+        //Here We used const for object
+        const obj={
+            name:'piya',
+            age:'20',
+            gender:'female'
+        }
+        obj.age='22';
+        document.getElementById('demo10').innerHTML=obj.age;
+       </script>
+
+       
+    <script src="introduction.js"></script>
+    </body>
+</html>

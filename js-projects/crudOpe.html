@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud operation in js</title>
+</head>
+
+<body>
+    <h2>CRUD OPERATION IN JS</h2>
+    <form action="" onsubmit="return false">
+        <input type="text" id="name">
+        <button onclick="managedata()">submit</button>
+    </form>
+    <h2 id="msg">List</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>Sr. No.</td>
+                <td>Name</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody id="root">
+
+        </tbody>
+    </table>
+    <script>
+        let id = '';
+        // localStorage.clear();
+        selectData();
+        function managedata() {
+            document.getElementById('msg').innerHTML = 'please enter your data';
+            let name = document.getElementById('name').value;
+            if (name == '') {
+                document.getElementById('msg').innerHTML = 'please enter your data';
+            } else {
+                if (id == 'no') {
+                    let arr = getCrudData();
+                    if (arr == null) {
+                        let data = [name];
+                        setCrudData(data);
+                    } else {
+                        arr.push(name);
+                        setCrudData(arr);
+                    }
+
+                    document.getElementById('msg').innerHTML = 'Data Added';
+                } else {
+                    let arr = getCrudData();
+                    arr[id] = name;
+                    setCrudData(arr);
+                    document.getElementById('msg').innerHTML = 'Data Updated';
+                }
+                document.getElementById('name').value = '';
+                selectData();
+            }
+
+        }
+
+        function selectData() {
+            let arr = getCrudData();
+            if (arr != null) {
+                let html = '';
+                let sno = 1;
+                for (let k in arr) {
+                    html = html + `<tr><td>${sno}</td><td>${arr[k]}</td><td><a href='javascript:void(0)' onClick='deleteData(${k})'>Delete</a><a href='javascript:void(0)' onClick='editData(${k})'>Edit</a></td></tr>`;
+                    sno++;
+                }
+                document.getElementById('root').innerHTML = html;
+            }
+        }
+
+        function getCrudData() {
+            let arr = JSON.parse(localStorage.getItem('crud'));
+            return arr;
+        }
+
+        function setCrudData(arr) {
+            localStorage.setItem('crud', JSON.stringify(arr));
+        }
+
+        function deleteData(rid) {
+            let arr = getCrudData();
+            arr.splice(rid, 1);
+            setCrudData(arr);
+            selectData();
+        }
+
+        function editData(rid) {
+          id = rid;
+           let arr = getCrudData();
+            document.getElementById('name').value = arr[rid];
+        }
+    </script>
+    <script src="custom.js"></script>
+</body>
+
+</html>

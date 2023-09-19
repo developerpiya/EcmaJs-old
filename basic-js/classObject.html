@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+    <p id="demo"></p>
+    <script>
+        class Car{
+            constructor(name,year){
+                this.name = name,
+                this.year = year
+            }
+        age(){
+            const date = new Date();
+            return date.getFullYear() - this.year;
+        }    
+        }
+        const mycar1 = new Car('oddi',2000);
+        const mycar2 = new Car('Bugati',2020);
+        document.getElementById('demo').innerHTML = mycar1.name + ' ' + mycar1.year + '<br>' + 
+        mycar2.name + ' ' + mycar2.year + '<br>' + mycar1.age();
+    </script>
+    </body>
+</html>

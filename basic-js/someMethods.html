@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Here We show set and add methods</h1>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <script>
+        const s1 = new Set(["a", "b", "c"]);
+        s1.add('d')
+        s1.add('d')
+        s1.add('d')
+        s1.add('d')
+        s1.add('e')
+        let t1 = '';
+        s1.forEach(function (value) {
+            t1 += value + '<br>';
+        })
+        document.getElementById('demo').innerHTML = s1.size + ' ' + t1;
+
+
+        //Map mathod
+        const c1 = new Map([
+            ['Apple',500],
+            ['Banana',200],
+            ['papaya',300]
+            ]);
+        let text='';    
+        c1.set('Date',300);
+        c1.set('Mango',100);
+        c1.forEach(function(value,key){
+            text+=key +' = '+value + '<br>' ;
+        })    
+       document.getElementById('demo1').innerHTML=c1.get('Date') + '<br>' + c1.has('pineApple') + ' ' + c1.size
+       + '<br>' + c1.delete('Apple') + '<br>' + c1.has('Apple') + '<br>' +text
+    </script>
+</body>
+
+</html>

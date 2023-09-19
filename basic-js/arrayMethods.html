@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Here show array methods</h1>
+        <p id="show1"></p>
+        <p id="show2"></p>
+        <p id="show3"></p>
+        <p id="show4"></p>
+        <p id="show5"></p>
+        <p id="show6"></p>
+        <p id="show7"></p>
+        <p id="show8"></p>
+        <p id="show9"></p>
+        <p id="show10"></p>
+        <p id="show11"></p>
+        <p id="show12"></p>
+        <p id="show13"></p>
+        <p id="show14"></p>
+    <script>
+         // function 1 for print the value
+        const numbers = [78,45,13,50,34];
+        let txt ='';
+        numbers.forEach(myfunction);
+        function myfunction(value,index,array){
+            txt+=value + '<br>';
+        }
+        document.getElementById('show1').innerHTML=`The numbers is ${txt}`;
+
+        //map method
+        const number2 = [10, 20, 30, 40, 50];
+        const newnumber2 = number2.map(myfunction2);
+        function myfunction2(value,index,array){
+            return value;
+        }
+        document.getElementById('show2').innerHTML=newnumber2;
+
+        // flatmap method
+        const flatnum = [1,2,3,4,5];
+        const newflatnum=flatnum.flatMap((value)=>value*2);
+        document.getElementById('show3').innerHTML=newflatnum;
+
+        //filter method
+        const filternum = [19,29,38,47,56];
+        const newfiltnum = filternum.filter((value,index,array)=> {return value>38})
+        document.getElementById('show4').innerHTML=newfiltnum;
+
+        //reduce method
+        const reducenum = [12,23,34,45,46,78];
+        const newreducenum = reducenum.reduce((total,value,index,array)=>{
+            return total+value;
+        })
+        document.getElementById('show5').innerHTML=newreducenum;
+
+        //reduceRight method
+        const reducernum = [12,23,34,45,46];
+        const newreducernum = reducernum.reduce((total,value,index,array)=>{
+            return total+value;
+        })
+        document.getElementById('show6').innerHTML=newreducernum;
+
+        //every method
+        const evenum = [32,44,66,4,36,31,22];
+        const newevenum = evenum.every((value,index,array)=>{
+            return value>20
+        })
+        document.getElementById('show7').innerHTML=newevenum;
+
+        //some method
+        const somenum = [32,44,66,44,36,31,22,2,4,5];
+        const newsomenum = somenum.some((value,index,array)=>{
+            return value>5;
+        })
+        document.getElementById('show8').innerHTML=newsomenum;
+
+        //indexOf method
+        const posnum = ['Apple','Banana','Mango','Date','Apple'];
+        const newposnum =posnum.indexOf('Apple');
+        const newposnumber =posnum.lastIndexOf('Apple');
+        document.getElementById('show9').innerHTML=newposnum + ' ' + newposnumber;
+
+        //find & findIndex method, inclue method 
+        const fnum = [23,24,45,35,37];
+        const newfnum = fnum.find(myfunction3);
+        const newfinum = fnum.findIndex(myfunction3);
+        const includenum = fnum.includes(61);
+        
+        function myfunction3(value,index,array){
+          return value>2;
+        }
+        document.getElementById('show10').innerHTML = newfnum + ' ' +  newfinum + ' ' + includenum + ' ' + Array.from('ABVCJKJNK');
+
+        //keys method
+        const fruits = ['Apple','Banana','Mango','Date','Apple'];
+        const fkeys = fruits.keys();
+        let text ='';
+        for (let i of fkeys){
+            text+=i;
+        }
+        document.getElementById('show11').innerHTML=text;
+
+         //entries method
+         const fruit = ['Apple','Banana','Mango','Date','Apple'];
+        const entriesnum = fruit.entries();
+        let text1 ='';
+        for (let i of entriesnum){
+            text1+=i;
+        }
+        document.getElementById('show12').innerHTML=text1;
+        
+        // spread operator
+        const arr1 = [1,2,3,4,5];
+        const arr2 = [6,7,8,9,10];
+        const arr3 = [11,12,13,14,15];
+        const mixedarr = [...arr1, ...arr2, ...arr3];
+        document.getElementById('show13').innerHTML=mixedarr;
+    </script>
+
+
+    </body>
+</html>

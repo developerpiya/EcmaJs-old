@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Hex color generator</title>
+    <style>
+        /* .bg{
+            background-color: rc;
+        } */
+    </style>
+</head>
+<body>
+    <div id="bg">
+        Here we show the random color generator
+    </div>
+    
+    <script>
+        
+        let rc = `#${Math.random().toString(16).slice(2,8).padEnd(6,0)}`;
+        console.log(rc);
+        document.getElementById('bg').style.backgroundColor = rc;
+    </script>
+</body>
+</html>

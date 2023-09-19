@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .show{
+            display: block;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="tabs_link">
+        <a href="javascript:void(0)" id="test1">Test1</a>
+        <a href="javascript:void(0)" id="test2">Test2</a>
+        <a href="javascript:void(0)" id="test3">Test3</a>
+    </div>
+    <p id="demo"></p>
+
+    <!-- <div class="box_test1" class="tab_box">
+        
+    </div>
+    <div class="box_test2" class="tab_box">
+        
+    </div>
+    <div class="box_test3" class="tab_box">
+        
+    </div> -->
+    <script>
+        let tab = document.querySelector('#tabs_link');
+        console.log(tab)
+        tab.addEventListener('click',function(e){
+            let id = e.target.id;
+            console.log(id);
+            document.getElementById('demo').innerHTML = 'Data is '+id;
+        })
+    </script>
+</body>
+
+</html>
