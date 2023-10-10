@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #cf9aff, #95c0ff);
+    color: #fff;
+    padding-top: 4%;
+    padding-left: 10%;
+}
+#btn{
+    color: #fff;
+    background-color: #b521cb;
+    padding: 10px;
+    border-radius: 50px;
+}
+.txt{
+  display: block;
+  margin: 20px;
+    padding: 20px;
+}

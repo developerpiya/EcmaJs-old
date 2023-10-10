@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map function in object</title>
+</head>
+<body>
+    <p>Map function in object</p>
+    <script>
+        let data = new Map([
+            ['name' , 'nobii'],
+            ['age','20'],
+        ]);
+        data.set('class','12');
+        console.log(data);
+        console.log(data.size);
+        console.log(data.keys());
+        console.log(data.values());
+        console.log(data.get('age'));
+        console.log(data.has('name'));
+        
+        data.forEach((v,k)=>{
+            console.log(k,v);
+        })
+
+        for([k,v] of data){
+            console.log('key value pair by for of loop '+k,v)
+        }
+    </script>
+</body>
+</html>

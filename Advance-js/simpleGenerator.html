@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Generator function</title>
+</head>
+
+<body>
+    <h1>Simple Generator function</h1>
+    <p id="newId"></p>
+    <button onclick="genNewId()">Generate New Id</button>
+    <!-- <script>
+        function* simplegenerator(){
+            console.log('Its simple generator function');
+            yield 'first step'
+            let x = 100
+            yield x
+            yield 'other'
+         }
+
+         let sG = simplegenerator();
+         console.log(sG.next());
+         console.log(sG.next());
+         console.log(sG.next());
+         console.log(sG.next());
+    </script> -->
+
+    <script>
+        function* simpleGenerator() {
+            let i = 100;
+            while (true) {
+                i++;
+                yield i;
+            }
+
+        }
+
+        let sG = simpleGenerator()
+
+        function genNewId() {
+            document.getElementById('newId').innerHTML = sG.next().value;
+
+        }
+    </script>
+</body>
+
+</html>

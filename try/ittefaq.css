@@ -1,0 +1,17 @@
+.mybotimage-container {
+    bottom: 240px
+}
+
+.mybot-adcover {
+    bottom: 130px;
+}
+
+@media screen and (max-width: 635px) {
+    .mybotimage-container {
+        bottom: 255px
+    }
+
+    .mybot-adcover {
+        bottom: 200px;
+    }
+}
