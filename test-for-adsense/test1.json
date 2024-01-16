@@ -1,0 +1,65 @@
+{
+    "CURRENT_CLIENT": "lazi_vn",
+    "ScriptDisabled": false,
+    "publisherDomain": "lazi.vn",
+    "GA_CODE": "G-PR5H2YHEN8",
+    "sid": "UBC-0595-17",
+    "CLARITY_CODE": "",
+    "LazyLoad": false,
+    "CHECK_BLOCKED_PAGES": false,
+    "Edit_Warning": false,
+    "CUSTOM_ADS_DIV": false,
+    "CUSTOM_ADS_CSS": false,
+    "CURRENCY_CONVERSION": false,
+    "CREATE_ADSENSE_DIVS" : true,
+    "adsense_pubID" : "ca-pub-5761017298734489",
+    "src" : "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5761017298734489",
+    "adsense_div_config": [
+    {
+    "adUnitDisplay": "B",
+    "adsense_MadSlot":"6291159721",
+    "adsense_DadSlot":"6291159721",
+    "adId": "ub-anchor",
+    "targetDiv": {
+    "elmType": "",
+    "selector": "",
+    "childElm": "", 
+    "childNum": ""
+    },
+    "childwidth_classname": "#div_ub_inpage0",
+    "disabled": false
+    },
+
+    {
+    "adUnitDisplay": "B",
+    "adUnitName": "/22082859479,23050152144/lazi_studiosis_interscroller_2",
+    "adId": "ub-popup",
+    "adsense_MadSlot":"6291159721",
+    "adsense_DadSlot":"6291159721",
+   "targetDiv": {
+    "elmType": "div",
+    "selector": "",
+    "childElm": "",
+    "childNum": ""
+    },
+    "childwidth_classname": "#div_ub_inpage1",
+    "disabled": false
+    },
+
+    {
+        "adUnitDisplay": "B",
+        "adsense_MadSlot":"6291159721",
+        "adsense_DadSlot":"6291159721",
+        "adId": "ub-parallax",
+       "targetDiv": {
+        "elmType": "div",
+        "selector": "",
+        "childElm": "",
+        "childNum": ""
+        },
+        "childwidth_classname": "#div_ub_inpage1",
+        "disabled": false
+        }
+
+    ]
+    }

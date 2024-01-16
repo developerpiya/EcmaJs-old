@@ -88,9 +88,6 @@ function selectAnswer(e) {
 }
 
 nextBtn.addEventListener("click", () => {
-    // console.log(currentQuestionIndex);
-    // console.log(questions.length);
-    // console.log("below handleNextButton console");
     if(currentQuestionIndex < questions.length) {
         handleNextButton();
     }else{
